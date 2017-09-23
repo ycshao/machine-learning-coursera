@@ -27,8 +27,12 @@ centroids = zeros(K, n);
 %
 
 
-
-
+for i=1:K
+    indices = idx == i;
+    for j=1:n
+        centroids(i, j) = sum(X(:, j) .* indices) / sum(indices);
+    end
+end
 
 
 
